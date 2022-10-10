@@ -40,7 +40,7 @@ class BaseModel():
         for key, value in new_dict.items():
             if key == "created_at":
                 new_dict.update([(key, value.isoformat())])
-            elif key == "update_at":
+            elif key == "updated_at":
                 new_dict.update([(key, value.isoformat())])
             else:
                 new_dict.update([(key, value)])
