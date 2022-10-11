@@ -32,6 +32,6 @@ class FileStorage():
         """ deserializes the JSON file to __objects """
         if isfile(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r") as f:
-                deserializated = json.load(f.read())
-                for key, value in desetializated.items():
+                deserializated = json.loads(f.read())
+                for key, value in deserializated.items():
                     FileStorage.__objects[key] = value
