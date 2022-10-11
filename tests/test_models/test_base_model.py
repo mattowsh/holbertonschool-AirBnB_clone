@@ -16,4 +16,7 @@ class Test_classBaseModel(unittest.TestCase):
 
         self.assertEqual(type(base0.id), str)
         self.assertEqual(type(base0.created_at), datetime)
-        self.assertEqual(type(base0.update_at), datetime)
+        self.assertEqual(type(base0.updated_at), datetime)
+
+if __name__ == '__main__':
+    unittest.main()
