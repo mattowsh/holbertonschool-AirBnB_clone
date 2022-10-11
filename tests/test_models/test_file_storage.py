@@ -21,6 +21,3 @@ class Test_classFileStorage(unittest.TestCase):
         """ to check the private attribute __objects """
         testclass = FileStorage()
         self.assertEqual(type(testclass._FileStorage__objects), dict)
-
-if __name__ == '__main__':
-    unittest.main()
