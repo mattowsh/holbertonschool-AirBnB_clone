@@ -4,6 +4,7 @@ Serializes instances to a JSON file and deserializes JSON file to instances:
 """
 import json
 from os.path import isfile
+from models.base_model import BaseModel
 
 
 class FileStorage():
@@ -23,15 +24,20 @@ class FileStorage():
         """ serializes __objects to the JSON file (path: __file_path) """
         new_dict = {}
         for key, value in FileStorage.__objects.items():
-            new_dict[key] = value.to_dict()
+          new_dict.update([(key, value.to_dict())])
+        
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as f:
-            # we pass the name of the dict and the name of the file(f)
-            json.dump(new_dict, f)
+              # we pass the name of the dict and the name of the file(f)
+              json.dump(new_dict, f)
  
     def reload(self):
         """ deserializes the JSON file to __objects """
         if isfile(FileStorage.__file_path):
             with open(FileStorage.__file_path, "r") as f:
-                deserializated = json.loads(f.read())
-                for key, value in deserializated.items():
-                    FileStorage.__objects[key] = value
+                # deserializate data, we will obtain a dict
+                fromjson = json.load(f)
+                # update __objects with the load file
+                for key, value in fromjson.items():
+                    FileStorage.__objects[key] = eval(value["__class__"])(**value)
+                    print(f'POST-EVAL: {FileStorage.__objects[key]}')
+                    print(f'>>>>>>>>>>>>{value["__class__"]}<<<<<<<<<<')
