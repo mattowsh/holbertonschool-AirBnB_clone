@@ -39,5 +39,3 @@ class FileStorage():
                 # update __objects with the load file
                 for key, value in fromjson.items():
                     FileStorage.__objects[key] = eval(value["__class__"])(**value)
-                    print(f'POST-EVAL: {FileStorage.__objects[key]}')
-                    print(f'>>>>>>>>>>>>{value["__class__"]}<<<<<<<<<<')
