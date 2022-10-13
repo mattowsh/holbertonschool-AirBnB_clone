@@ -5,6 +5,7 @@ command interpreter:
 """
 import cmd
 import sys
+import uuid
 from models.base_model import BaseModel
 from models import storage
 
@@ -71,4 +72,3 @@ class HBNBCommand(cmd.Cmd):
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
-
