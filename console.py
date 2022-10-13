@@ -12,7 +12,7 @@ from models import storage
 class HBNBCommand(cmd.Cmd):
     """ command line processor """
     prompt = '(hbnb)'
-    our_classes = [BaseModel]
+    our_classes = ["BaseModel"]
 
     def do_quit(self, arg):
         """to exit the program"""
@@ -50,7 +50,7 @@ class HBNBCommand(cmd.Cmd):
 
         elif len(prompt_args) == 1: 
             # if len(prompt_args) <= 2 means that input is incomplete,
-            if prompt_args[0] in self.our_classes:
+            if (prompt_args[0] in self.our_classes) is True:
                 # check if ID is missing
                 print("** instance id missing **")
                 return
@@ -80,7 +80,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         elif len(prompt_args) == 1:
-            if prompt_args[0] in self.our_classes:
+            if (prompt_args[0] in self.our_classes) is True:
                 # check if prompt_args[0] is a valid class name
                 print("** instance id missing **")
                 return
