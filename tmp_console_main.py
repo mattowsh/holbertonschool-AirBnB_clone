@@ -5,12 +5,15 @@ command interpreter:
 """
 import cmd
 import sys
+import uuid
 from models.base_model import BaseModel
 from models import storage
 
 class HBNBCommand(cmd.Cmd):
     """ command line processor """
-    prompt = '(hbnb)'
+    def __init__(self):
+        cmd.Cmd.__init__(self)
+        self.prompt = '(hbnb)'
 
     def do_quit(self, arg):
         """to exit the program"""
@@ -69,6 +72,5 @@ class HBNBCommand(cmd.Cmd):
             except:
                 print("** no instance found **")
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
