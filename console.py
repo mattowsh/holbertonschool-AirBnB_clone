@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
-        elif len(prompt_args) == 1: 
+        elif len(prompt_args) >= 1: 
             # if len(prompt_args) <= 2 means that input is incomplete,
             if (prompt_args[0] in self.our_classes) is True:
                 # check if ID is missing
@@ -59,16 +59,14 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
                 return
 
-        elif len(prompt_args) == 2:
-            # the correct quantity of args
-            try:
-                # string format: 'class.id'
-                class_plus_id = '.'.join(prompt_args)
-                objs = storage.all()
-                # search in JSON file with the key 'class.id'
-                print(objs[class_plus_id])
-            except:
-                print("** no instance found **")
+        try:
+            # string format: 'class.id'
+            class_plus_id = '.'.join(prompt_args)
+            objs = storage.all()
+            # search in JSON file with the key 'class.id'
+            print(objs[class_plus_id])
+        except:
+            print("** no instance found **")
 
     def do_destroy(self, args):
         """ Deletes an instance based on the class name and id """
@@ -79,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return
 
-        elif len(prompt_args) == 1:
+        elif len(prompt_args) >= 1:
             if (prompt_args[0] in self.our_classes) is True:
                 # check if prompt_args[0] is a valid class name
                 print("** instance id missing **")
@@ -89,17 +87,16 @@ class HBNBCommand(cmd.Cmd):
                 print("** class doesn't exist **")
                 return
 
-        elif len(prompt_args) == 2:
-            try:
-                # string format: 'class.id'
-                class_delete = '.'.join(prompt_args)
-                objs = storage.all()
-                # update JSON file with the key 'class.id' removed
-                del objs[class_delete]
-                storage.save()
-            except:
-                print("** no instance found **")
-                return
+        try:
+            # string format: 'class.id'
+            class_delete = '.'.join(prompt_args)
+            objs = storage.all()
+            # update JSON file with the key 'class.id' removed
+            del objs[class_delete]
+            storage.save()
+        except:
+            print("** no instance found **")
+            return
 
 
 if __name__ == "__main__":
