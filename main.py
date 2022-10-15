@@ -19,6 +19,7 @@ if not os.path.exists(file_path):
 if os.path.exists(file_path):
     os.remove(file_path)
 
+
 """
  Backup console file
 """
@@ -75,10 +76,15 @@ result = exec_command(my_console, "create BaseModel")
 if result is None or result == "":
     print("FAIL: No ID retrieved")
     
-with open(file_path, "r") as file:
-    s_file = file.read()
-    if result not in s_file:
-        print("FAIL: New ID not in the JSON file")
+model_id = result
+
+result = exec_command(my_console, "all BaseModel")
+if result is None or result == "":
+    print("FAIL: no output")
+    
+if model_id not in result:
+    print("FAIL: New ID not in the output")
+    
 print("OK", end="")
 
 shutil.copy("tmp_console_main.py", "console.py")
