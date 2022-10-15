@@ -111,15 +111,17 @@ class HBNBCommand(cmd.Cmd):
         prompt_args = args.split()
 
         if len(args) == 0 or (prompt_args[0] in self.our_classes) is True:
-            # check if we have args
-            # if we have args, check if the class name is valid or not
+            # check if the class name is valid or not
             objs = storage.all()
             all_objs = []
+
             for key, value in objs.items():
-                string_obj = str(objs[key])
-                all_objs.append(string_obj)
+                string_objs = str(objs[key])
+                all_objs.append(string_objs)
+
             print(all_objs)
         else:
+            # if prompt_args[0] is a non-valid class name
             print("** class doesn't exist **")
             return
 
