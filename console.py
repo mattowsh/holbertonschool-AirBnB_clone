@@ -19,7 +19,8 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """ command line processor """
     prompt = '(hbnb)'
-    our_classes = ["BaseModel"]
+    our_classes = ["BaseModel", "User", "State", "City",
+                    "Amenity", "Place", "Review"]
 
     def do_quit(self, arg):
         """to exit the program"""
@@ -116,7 +117,7 @@ class HBNBCommand(cmd.Cmd):
         on the class name """
         prompt_args = args.split()
 
-        if len(args) == 0 or (prompt_args[0] in self.our_classes) is True:
+        if len(args) == 0:
             # check if the class name is valid or not
             objs = storage.all()
             all_objs = []
@@ -126,6 +127,17 @@ class HBNBCommand(cmd.Cmd):
                 all_objs.append(string_objs)
 
             print(all_objs)
+
+        elif (prompt_args[0] in self.our_classes) is True:
+            objs = storage.all()
+            all_objs = []
+
+            for key, value in objs.items():
+                if prompt_args[0] in key:
+                    string_objs = str(objs[key])
+                    all_objs.append(string_objs)
+            print(all_objs)
+
         else:
             # if prompt_args[0] is a non-valid class name
             print("** class doesn't exist **")
