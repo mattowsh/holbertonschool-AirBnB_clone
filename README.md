@@ -19,38 +19,93 @@ The console is a tool to **manipulate and validate the powerful storage system**
 - All the files use the `pycodestyle (version 2.7.)` standard guidelines, including class and functions documentation
 - All tests are execute using the `unittest` module
 
-## Files
-- **`AUTHORS`**: the list of contributors
-- **`console.py`** : contains the entry point of the command interpreter and specific functions to handle the input
-<div align="center">
-	
+## The console main file
+- **`console.py`** : contains the entry point of the command interpreter and specific methods to handle the input. **These are the commands you must have to work in the console**:
+
 	| Function | Description | Usage example |
 	| -- | -- | -- |
-	| `do_quit` | To exit the programm | `quit` |
-	| `do_quit` | To exit the programm | `quit` |
+	| `do_quit` | To exit the progrmm | `quit` |
+	| `do_EOF` | To exit the program handling End of File (ctrl + D) | ctrl + D |
+	| `emptyline` | Do anything | empty line + enter |
+	| `do_create` | Creates a new instance of BaseModel | `create BaseModel` |
+	| `do_show` | Prints the string representation of an instance | `show Place` |
+	| `do_destroy` | Deletes an instance based on the class name and id | `destroy User a1c42567-c2b9-43bc-9825-9b2edffb483f` |
+	| `do_all` | Prints all string representation of all instances | `all` or `all Review`|
+	| `do_update` | Updates an instance based on the class name and id by adding or updating attribute | `update User a1c42567-c2b9-43bc-9825-9b2edffb483f email "aibnb@mail.com"`|
 	
-</div>
+#### Supported Classes:
 
-## Folders
-- **`models`** : ////
-	- *base_model.py*: ///
+	BaseModel, User, State, City, Amenity, Place, Review
 
-- **`tests`** : ////
+
+## The storage system file
+- **`file_storage.py`** : is the responsable to keep functional and safe all the data in the system via serializations of instances to a JSON file and deserializations JSON file to instances. The file is found in *models* folder > *engine* folder. The methods of the class FileStorage are for internal use only. 
+ 
+	| Function | Description |
+	| -- | -- |
+	| `all` | Return the dictionary of attributes of the instance |
+	| `new` | To create a new instance |
+	| `save` | Serializes the dictionary of attributes of an instance to the JSON file |
+	| `reload` | Deserializes the JSON file to the dictionary of attributes of an instance |
+	
 
 ## Execute the console [UPDATE]
 Clone this repository:
 
     git clone https://github.com/mattowsh/holbertonschool-AirBnB_clone.git
 
-Execute the console in interactive mode: [UPDATE IMAGE]
+Execute the console in interactive mode:
+
+    $ ./console.py
 
 Execute the console in non-interactive mode: [UPDATE IMAGE]
+
+    $ echo "the_command_you_want" | ./console.py
 
 Unit testing:
 
     python3 -m unittest discover tests
 
-## Usage examples [UPDATE IMAGES and CONTENT]
+## Usage examples
+### Non-interactive mode
+```
+$ echo "help" | ./console.py
+(hbnb)
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+(hbnb)
+$
+$ cat test_create
+create BaseModel
+$
+$ cat test_create | ./console.py
+(hbnb)cac68aef-e8eb-4379-8981-b6809ba01b72
+$
+```
+
+### Interactive mode
+
+```
+$ ./console.py
+(hbnb) help
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+(hbnb)
+(hbnb) create BaseModel
+c384e626-0924-4fd7-910c-2b87af45215c
+(hbnb) 
+(hbnb) all
+["[BaseModel] (c384e626-0924-4fd7-910c-2b87af45215c) {'id': 'c384e626-0924-4fd7-910c-2b87af45215c', 'created_at': datetime.datetime(2022, 10, 15, 15, 12, 22, 529850), 'updated_at': datetime.datetime(2022, 10, 15, 15, 12, 22, 529862)}"]
+(hbnb)
+(hbnb) destroy BaseModel c384e626-0924-4fd7-910c-2b87af45215c
+(hbnb) show BaseModel c384e626-0924-4fd7-910c-2b87af45215c
+** no instance found **
+(hbnb)
+(hbnb) quit
+$
+```
 
 ## Authors
 [Luis Baute](https://www.linkedin.com/in/luis-baute-99305b188/)  
