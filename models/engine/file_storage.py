@@ -5,6 +5,12 @@ Serializes instances to a JSON file and deserializes JSON file to instances:
 import json
 from os.path import isfile
 from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class FileStorage():
@@ -25,11 +31,11 @@ class FileStorage():
         new_dict = {}
         for key, value in FileStorage.__objects.items():
           new_dict.update([(key, value.to_dict())])
-        
+
         with open(FileStorage.__file_path, 'w', encoding='utf-8') as f:
               # we pass the name of the dict and the name of the file(f)
               json.dump(new_dict, f)
- 
+
     def reload(self):
         """ deserializes the JSON file to __objects """
         if isfile(FileStorage.__file_path):
