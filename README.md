@@ -13,7 +13,6 @@ The console is a tool to **manipulate and validate the powerful storage system**
 
 ![HBNH_v1](https://user-images.githubusercontent.com/103126719/194949080-d2131133-6a4d-46d0-b008-bfda593a01da.png)
 ## Requirements
-- Allowed editors: `vi`, `vim` and `emacs`
 - All the files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
 - `README.md` file must exist
 - All the files use the `pycodestyle (version 2.7.)` standard guidelines, including class and functions documentation
