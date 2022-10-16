@@ -19,7 +19,7 @@ The console is a tool to **manipulate and validate the powerful storage system**
 - All tests are execute using the `unittest` module
 
 ## The console main file
-- **`console.py`** : contains the entry point of the command interpreter and specific methods to handle the input. **These are the commands you must have to work in the console**:
+- **`console.py`** : contains the entry point of the command interpreter and specific methods to handle the input. **These are the commands you must use to work in the console**:
 
 	| Function | Description | Usage example |
 	| -- | -- | -- |
