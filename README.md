@@ -34,12 +34,20 @@ The console is a tool to **manipulate and validate the powerful storage system**
 	| `do_update` | Updates an instance based on the class name and id by adding or updating attribute | `update User a1c42567-c2b9-43bc-9825-9b2edffb483f email "aibnb@mail.com"`|
 	
 #### Supported Classes:
+The main class is `BaseModel` that defines all common attributes/methods to be inherited by other classes.
 
-	BaseModel, User, State, City, Amenity, Place, Review
-
+| Class name | Attributes |
+| -- | -- |
+| `BaseModel` | <ul><li>id (by UUID)</li><li>created_at (datetime when an instance is created)</li><li>updated_at (when an instance is created or updated)</li></ul> |
+| `User` | <ul><li>email</li><li>password</li><li>first_name</li><li>last_name</li></ul> |
+| `State` | <ul><li>name</li></ul> |
+| `City` | <ul><li>state_id</li><li>name</li></ul> |
+| `Amenity` | <ul><li>name</li></ul> |
+| `Place` | <ul><li>city_id</li><li>user_id</li><li>name</li><li>description</li><li>number_rooms</li><li>number_bathrooms</li><li>max_guest</li><li>price_by_night</li><li>latitude</li><li>longitude</li><li>amenity_ids</li></ul> |
+| `Review` | <ul><li>place_id</li><li>user_id</li><li>text</li></ul> |
 
 ## The storage system file
-- **`file_storage.py`** : is the responsable to keep functional and safe all the data in the system via serializations of instances to a JSON file and deserializations JSON file to instances. The file is found in *models* folder > *engine* folder. The methods of the class FileStorage are for internal use only. 
+- **`file_storage.py`** : is the responsable to keep functional and safe all the data in the system via serializations of instances to a JSON file and deserializations of JSON file to instances. The file is found in *models* folder > *engine* folder. The methods of the class FileStorage are for internal use only. 
  
 	| Function | Description |
 	| -- | -- |
