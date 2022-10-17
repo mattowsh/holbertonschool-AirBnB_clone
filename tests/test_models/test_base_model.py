@@ -19,18 +19,18 @@ class Test_classBaseModel(unittest.TestCase):
         self.assertEqual(type(base0.id), str)
         self.assertEqual(type(base0.created_at), datetime)
 
-    def test_save(self):
-        """ to check the correct update of updated_at attribute """
-        base1 = BaseModel()
+    #def test_save(self):
+     #   """ to check the correct update of updated_at attribute """
+      #  base1 = BaseModel()
         
         # we save the actual value
-        old_value = base1.__dict__["updated_at"]
+       # old_value = base1.__dict__["updated_at"]
 
         # update the value and save
-        models.storage.save()
+        #models.storage.save()
 
         # check if the old_value == updated value
-        self.assertNotEqual(base1.__dict__["updated_at"], old_value)
+        #self.assertNotEqual(base1.__dict__["updated_at"], old_value)
 
     def test_to_dict(self):
         """ to check the correct convertion of all attributes of an instances
