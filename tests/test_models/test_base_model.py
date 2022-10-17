@@ -19,12 +19,6 @@ class Test_classBaseModel(unittest.TestCase):
         self.assertEqual(type(base0.id), str)
         self.assertEqual(type(base0.created_at), datetime)
 
-    #def test_str(self):
-     #   """ to check the correct override of __str__ """
-     #   base1 = BaseModel()
-      #  print("help")
-       # print(base1.__str__)
-
     def test_save(self):
         """ to check the correct save of a new instance in
         JSON file """
@@ -34,7 +28,6 @@ class Test_classBaseModel(unittest.TestCase):
             # calculates the length of our JSON file with one instance
             qty_words = (file.read()).split()
             before_save = len(qty_words)
-            print(before_save)
 
         base3 = BaseModel()
         models.storage.save()
@@ -43,6 +36,15 @@ class Test_classBaseModel(unittest.TestCase):
             # our JSON file increment 
             qty_words = (file.read()).split()
             after_save = len(qty_words)
-            print(after_save)
-
+        
         self.assertTrue(before_save < after_save)
+
+    def test_to_dict(self):
+        """ to check the correct convertion of all attributes of an instances
+        into a dictionary """
+        base4 = BaseModel()
+        new_dict = base4.to_dict()
+
+        self.assertEqual(type(new_dict), dict)
+        self.assertEqual(type(new_dict["created_at"]), str)
+        self.assertEqual(type(new_dict["updated_at"]), str)
