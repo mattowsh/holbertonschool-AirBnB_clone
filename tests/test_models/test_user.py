@@ -7,7 +7,7 @@ from models.user import User
 
 
 class Test_classUser(unittest.TestCase):
-    """ Class that include all class BaseModel test """
+    """ Class that include all class User tests """
 
     def test_attrs(self):
         """ to check the attributes of an instances """
