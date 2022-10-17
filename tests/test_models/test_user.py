@@ -11,15 +11,22 @@ from datetime import datetime
 class Test_classUser(unittest.TestCase):
     """ Class that include all class BaseModel test """
 
-    def test_attr1(self):
-        """ to check the attributes of an instances: email and password """
-        testclass = User(email="hbnh@mail.com", password="root")
-        self.assertEqual(testclass.email, "hbnh@mail.com")
-        self.assertEqual(testclass.password, "root")
+    def test_email(self):
+        """ to check the attribute of an instances: email """
+        user0 = User(email="hbnh@mail.com")
+        self.assertEqual(user0.email, "hbnh@mail.com")
 
-    def test_attr2(self):
-        """ to check the attributes of an instances: first_name
-        and last_name """
-        testclass2 = User(first_name="Jimmy", last_name="Neutron")
-        self.assertEqual(testclass2.first_name, "Jimmy")
-        self.assertEqual(testclass2.last_name, "Neutron")
+    def test_password(self):
+        """ to check the attribute of an instances: password """
+        user1 = User(password="root")
+        self.assertEqual(user1.password, "root")
+
+    def test_firstname(self):
+        """ to check the attribute of an instances: first_name """
+        user2 = User(first_name="Jimmy")
+        self.assertEqual(user2.first_name, "Jimmy")
+
+    def test_lastname(self):
+        """ to check the attribute of an instances: last_name """
+        user3 = User(last_name="Neutron")
+        self.assertEqual(user3.last_name, "Neutron")
