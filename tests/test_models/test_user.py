@@ -4,8 +4,6 @@ Unittest for class User
 """
 import unittest
 from models.user import User
-from models.base_model import BaseModel
-from datetime import datetime
 
 
 class Test_classUser(unittest.TestCase):
@@ -30,3 +28,6 @@ class Test_classUser(unittest.TestCase):
         """ to check the attribute of an instances: last_name """
         user3 = User(last_name="Neutron")
         self.assertEqual(user3.last_name, "Neutron")
+
+if __name__ == '__main__':
+    unittest.main()
