@@ -4,6 +4,7 @@ Unittest for class BaseModel methods
 """
 import unittest
 from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
 from datetime import datetime
 import os
 import models
@@ -19,19 +20,6 @@ class Test_classBaseModel(unittest.TestCase):
         self.assertEqual(type(base0.id), str)
         self.assertEqual(type(base0.created_at), datetime)
 
-    #def test_save(self):
-     #   """ to check the correct update of updated_at attribute """
-      #  base1 = BaseModel()
-        
-        # we save the actual value
-       # old_value = base1.__dict__["updated_at"]
-
-        # update the value and save
-        #models.storage.save()
-
-        # check if the old_value == updated value
-        #self.assertNotEqual(base1.__dict__["updated_at"], old_value)
-
     def test_to_dict(self):
         """ to check the correct convertion of all attributes of an instances
         into a dictionary """
@@ -46,6 +34,17 @@ class Test_classBaseModel(unittest.TestCase):
         model = BaseModel()
         prin = f"[{model.__class__.__name__}] ({model.id}) {model.__dict__}"
         self.assertEqual(prin, model.__str__())
+
+    def test_save(self):
+        storage = FileStorage()
+        storage.all().clear()
+        my_model = BaseModel()
+        try:
+            os.remove("file.json")
+        except Exception:
+            pass
+        my_model.save()
+        self.assertTrue(os.path.exists("file.json"))
 
 if __name__ == '__main__':
     unittest.main()
