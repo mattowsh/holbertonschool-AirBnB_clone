@@ -2,10 +2,10 @@
 """
 Unittest for class FileStoreage methods
 """
-import unittest
-from models.engine.file_storage import FileStorage
-from models.engine.__init__ import __init__
 
+import unittest
+from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
 
 class Test_classFileStorage(unittest.TestCase):
     """ Class that includes all class FileStorage tests """
@@ -21,3 +21,30 @@ class Test_classFileStorage(unittest.TestCase):
         """ to check the private attribute __objects """
         testclass = FileStorage()
         self.assertEqual(type(testclass._FileStorage__objects), dict)
+
+    def test_all(self):
+        storage = FileStorage()
+        self.assertEqual(type(storage.all()), dict)
+
+    def test_new(self):
+        my_model = BaseModel()
+        storage = FileStorage()
+        storage.new(my_model)
+        prin = f"{my_model.__class__.__name__}.{my_model.id}"
+        self.assertEqual(storage.all()[prin], my_model)
+
+    def test_save(self):
+        storage = FileStorage()
+        storage.all().clear()
+        my_model = BaseModel()
+        storage.save()
+        self.assertNotEqual(len(storage.all()), 0)
+
+    def test_reload(self):
+        storage = FileStorage()
+        storage.all().clear()
+        storage.reload()
+        self.assertNotEqual(len(storage.all()), 0)
+
+if __name__ == '__main__':
+    unittest.main()
