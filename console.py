@@ -19,8 +19,9 @@ from models.review import Review
 class HBNBCommand(cmd.Cmd):
     """ command line processor """
     prompt = '(hbnb) '
-    our_classes = ["BaseModel", "User", "State", "City",
-                    "Amenity", "Place", "Review"]
+    our_classes = [
+            "BaseModel", "User", "State", "City", "Amenity", "Place", "Review"
+            ]
 
     def do_quit(self, arg):
         """to exit the program"""
@@ -44,19 +45,19 @@ class HBNBCommand(cmd.Cmd):
             new_instance = eval(args)()
             new_instance.save()
             print(new_instance.id)
-        except:
+        except Exception:
             print("** class doesn't exist **")
 
     def do_show(self, args):
         """ Prints the string representation of an instance """
         # to create a list of strings that contain the input
         prompt_args = args.split()
- 
+
         if len(prompt_args) == 0:
             print("** class name missing **")
             return
 
-        elif len(prompt_args) == 1: 
+        elif len(prompt_args) == 1:
             # if len(prompt_args) <= 2 means that input is incomplete,
             if (prompt_args[0] in self.our_classes) is True:
                 # check if ID is missing
@@ -76,7 +77,7 @@ class HBNBCommand(cmd.Cmd):
                 print(objs[class_plus_id])
             else:
                 print("** class doesn't exist **")
-        except:
+        except Exception:
             print("** no instance found **")
 
     def do_destroy(self, args):
@@ -108,7 +109,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
             else:
                 print("** class doesn't exist **")
-        except:
+        except Exception:
             print("** no instance found **")
             return
 
@@ -125,7 +126,6 @@ class HBNBCommand(cmd.Cmd):
             for key, value in objs.items():
                 string_objs = str(objs[key])
                 all_objs.append(string_objs)
-
             print(all_objs)
 
         elif (prompt_args[0] in self.our_classes) is True:
