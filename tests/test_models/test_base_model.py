@@ -20,24 +20,17 @@ class Test_classBaseModel(unittest.TestCase):
         self.assertEqual(type(base0.created_at), datetime)
 
     def test_save(self):
-        """ to check the correct save of a new instance in
-        JSON file """
-        base2 = BaseModel()
-        models.storage.save()
-        with open("file.json", "r") as file:
-            # calculates the length of our JSON file with one instance
-            qty_words = (file.read()).split()
-            before_save = len(qty_words)
-
-        base3 = BaseModel()
-        models.storage.save()
-        with open("file.json", "r") as file:
-            # after create a new instance, we wait the length of
-            # our JSON file increment 
-            qty_words = (file.read()).split()
-            after_save = len(qty_words)
+        """ to check the correct update of updated_at attribute """
+        base1 = BaseModel()
         
-        self.assertTrue(before_save < after_save)
+        # we save the actual value
+        old_value = base1.__dict__["updated_at"]
+
+        # update the value and save
+        models.storage.save()
+
+        # check if the old_value == updated value
+        self.assertNotEqual(base1.__dict__["updated_at"], old_value)
 
     def test_to_dict(self):
         """ to check the correct convertion of all attributes of an instances
