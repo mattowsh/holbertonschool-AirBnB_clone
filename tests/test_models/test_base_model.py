@@ -42,5 +42,10 @@ class Test_classBaseModel(unittest.TestCase):
         self.assertEqual(type(new_dict["created_at"]), str)
         self.assertEqual(type(new_dict["updated_at"]), str)
 
+    def test_str(self):
+        model = BaseModel()
+        prin = f"[{model.__class__.__name__}] ({model.id}) {model.__dict__}"
+        self.assertEqual(prin, model.__str__())
+
 if __name__ == '__main__':
     unittest.main()
