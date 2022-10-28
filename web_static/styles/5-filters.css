@@ -26,3 +26,28 @@ button {
 button:hover {
     opacity: 90%;
 }
+
+.filters div {
+    height: 100%;
+    width: 25%;
+    float: left;
+    text-align: left;
+}
+
+.filters div:first-child {
+    border-right: 1px solid #DDDDDD;
+}
+
+.filters div h3 {
+    font-weight: 600;
+    margin-left: 40px;
+    margin-bottom: 6px;
+    margin-top: 15px;
+}
+
+.filters div h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 40px;
+    margin-top: 0;
+}
