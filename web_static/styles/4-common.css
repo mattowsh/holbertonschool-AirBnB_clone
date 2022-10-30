@@ -4,10 +4,14 @@ body {
     color: #484848;
     font-size: 14px;
     font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* to keep the footer in the bottom: */
+    position: relative;
 }
 
 .container {
     max-width: 1000px;
     margin: 30px auto;
     text-align: center;
+    padding-bottom: 2.5rem;
+    margin-bottom: 0px;
 }
