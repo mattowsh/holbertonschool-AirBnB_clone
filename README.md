@@ -137,9 +137,12 @@ The first step is to “design” / “sketch” / “prototype” each element:
 - No Javascript
 - No data loaded from anything
 
-See the result 👇
+<div align="center">See the result 👇 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9b16b947-0d7a-475b-b173-6b3b9603709c/deploy-status)](https://hbnb-hbtn18uy.netlify.app/)
+<a href="https://hbnb-hbtn18uy.netlify.app/"><img src="https://raw.githubusercontent.com/maxogden/hexbin/90a6aae0ebb12d4ac9810f870b67100d913a18f4/vector/netlify.svg" width=10%></img></a>
+
+</div>
+
 
 ## Authors
 
