@@ -137,9 +137,9 @@ The first step is to “design” / “sketch” / “prototype” each element:
 - No Javascript
 - No data loaded from anything
 
-<div align="center">See the result 👇 
+<div align="center"><p>See the result 👇</p>
 
-<a href="https://hbnb-hbtn18uy.netlify.app/"><img src="https://raw.githubusercontent.com/maxogden/hexbin/90a6aae0ebb12d4ac9810f870b67100d913a18f4/vector/netlify.svg" width=10%></img></a>
+<a href="https://hbnb-hbtn18uy.netlify.app/"><img src="https://www.svgrepo.com/show/331495/netlify.svg" width=8%></img></a>
 
 </div>
 
