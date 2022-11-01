@@ -131,11 +131,14 @@ In this second phase we will build the front-end of our AirBnB clone.
 
 The first step is to “design” / “sketch” / “prototype” each element:
 
-- Create simple **HTML** static pages
+- Create simple **HTML** static page
 - Style guide using **CSS**
 - Fake contents
 - No Javascript
 - No data loaded from anything
+
+![airbnb v2](https://user-images.githubusercontent.com/103126719/199296995-6e9598d5-786e-46e5-a4d2-32b4d08e800b.png)
+
 
 <div align="center"><p>See the result 👇</p>
 
