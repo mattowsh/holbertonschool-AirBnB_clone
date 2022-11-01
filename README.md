@@ -2,9 +2,17 @@
 <img src="https://camo.githubusercontent.com/a0c52a69dc410e983b8c63fa4aa57e83cb4157cd/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f696e7472616e65742d70726f6a656374732d66696c65732f686f6c626572746f6e7363686f6f6c2d6869676865722d6c6576656c5f70726f6772616d6d696e672b2f3236332f4842544e2d68626e622d46696e616c2e706e67" alt="hbnb" width=40% heigth=40% >
 </p>
 
-<h1 align="center">AirBnB clone v1: the console</h1>
+<h1 align="center">AirBnB clone: the project</h1>
 
-The **hbhn** is a project of Foundations: second trimester, of the career Software Engineering at Holberton School.The general objetive is create a full-stack clone of the recognized web application [AirBnB](https://www.airbnb.com/). 
+<p align="center"> The <strong>hbhn</strong> is a project of Foundations: second trimester, of the career Software Engineering at Holberton School.The general objetive is create a full-stack clone of the recognized web application <a href="https://www.airbnb.com/">AirBnB</a>.</p>
+
+## Index
+1. [AirBnB clone v1: the console](#v1)  
+2. [AirBnB clone v2: web static](#v2) 
+
+<a name="v1">
+	<h1 align="center">AirBnB clone v1: the console</h1>
+</a>
 
 The objetive of this first phase is **create our data model** to:
 - manage correcly Python objects
@@ -115,9 +123,29 @@ c384e626-0924-4fd7-910c-2b87af45215c
 (hbnb) quit
 $
 ```
+<a name="v2">
+	<h1 align="center">AirBnB clone v2: web static</h1>
+</a>
 
 ## Authors
-[Luis Baute](https://www.linkedin.com/in/luis-baute-99305b188/)  
-[Belén Matto](https://www.linkedin.com/in/mattobelen/) 
+
+<dl>
+	<dt><strong>AirBnB v1</strong></dt>
+	<dd>
+		<a href="https://www.linkedin.com/in/luis-baute-99305b188/">Luis Baute</a>
+	</dd>
+	<dd>
+		<a href="https://www.linkedin.com/in/mattobelen/">Belén Matto</a>
+	</dd>
+	October, 2022
+</dl>
+
+<dl>
+	<dt><strong>AirBnB v2</strong></dt>
+	<dd>
+		<a href="https://www.linkedin.com/in/mattobelen/">Belén Matto</a>
+	</dd>
+October, 2022
+</dl>
 
 Montevideo, Uruguay.
