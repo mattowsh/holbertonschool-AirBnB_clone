@@ -4,14 +4,14 @@
 
 <h1 align="center">AirBnB clone: the project</h1>
 
-<p align="center"> The <strong>hbhn</strong> is a project of Foundations: second trimester, of the career Software Engineering at Holberton School.The general objetive is create a full-stack clone of the recognized web application <a href="https://www.airbnb.com/">AirBnB</a>.</p>
+<p align="center"> The <strong>hbhn</strong> is a project of Foundations: second trimester, of the career Software Engineering at Holberton School. The general objetive is create a full-stack clone of the recognized web application <a href="https://www.airbnb.com/">AirBnB</a>.</p>
 
 ## Index
 1. [AirBnB clone v1: the console](#v1)  
 2. [AirBnB clone v2: web static](#v2) 
 
 <a name="v1">
-	<h1 align="center">AirBnB clone v1: the console</h1>
+	<h2 align="center">AirBnB clone v1: the console</h2>
 </a>
 
 The objetive of this first phase is **create our data model** to:
@@ -66,7 +66,7 @@ The main class is `BaseModel` that defines all common attributes/methods to be i
 	| `reload` | Deserializes the JSON file to the dictionary of attributes of an instance |
 	
 
-## Execute the console [UPDATE]
+## Execute the console
 Clone this repository:
 
     git clone https://github.com/mattowsh/holbertonschool-AirBnB_clone.git
@@ -124,28 +124,16 @@ c384e626-0924-4fd7-910c-2b87af45215c
 $
 ```
 <a name="v2">
-	<h1 align="center">AirBnB clone v2: web static</h1>
+	<h2 align="center">AirBnB clone v2: web static</h2>
 </a>
 
 ## Authors
 
-<dl>
-	<dt><strong>AirBnB v1</strong></dt>
-	<dd>
-		<a href="https://www.linkedin.com/in/luis-baute-99305b188/">Luis Baute</a>
-	</dd>
-	<dd>
-		<a href="https://www.linkedin.com/in/mattobelen/">Belén Matto</a>
-	</dd>
-	October, 2022
-</dl>
+AirBnB v1:
+<a href="https://www.linkedin.com/in/luis-baute-99305b188/">Luis Baute</a> &
+<a href="https://www.linkedin.com/in/mattobelen/">Belén Matto</a>
 
-<dl>
-	<dt><strong>AirBnB v2</strong></dt>
-	<dd>
-		<a href="https://www.linkedin.com/in/mattobelen/">Belén Matto</a>
-	</dd>
-October, 2022
-</dl>
+AirBnB v2:
+<a href="https://www.linkedin.com/in/mattobelen/">Belén Matto</a>
 
 Montevideo, Uruguay.
