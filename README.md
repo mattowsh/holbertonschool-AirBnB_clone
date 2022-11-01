@@ -127,6 +127,20 @@ $
 	<h2 align="center">AirBnB clone v2: web static</h2>
 </a>
 
+In this second phase we will build the front-end of our AirBnB clone.
+
+The first step is to “design” / “sketch” / “prototype” each element:
+
+- Create simple **HTML** static pages
+- Style guide using **CSS**
+- Fake contents
+- No Javascript
+- No data loaded from anything
+
+See the result 👇
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9b16b947-0d7a-475b-b173-6b3b9603709c/deploy-status)](https://hbnb-hbtn18uy.netlify.app/)
+
 ## Authors
 
 AirBnB v1:
